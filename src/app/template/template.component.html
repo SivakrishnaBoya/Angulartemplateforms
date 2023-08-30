@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-center align-items-center container ">
+<form  #LogIn="ngForm" (ngSubmit)="onSumbit(LogIn)">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Email</label>
+        <input type="email"  style=" width: 250px;" class="form-control" id="inputEmail4" placeholder="Email" name="Email" [(ngModel)]="Email" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Password</label>
+        <input type="password" style=" width: 250px;" class="form-control" [(ngModel)]="Password" id="inputPassword4" placeholder="Password" name="Password" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAddress">Address</label>
+      <textarea  class="form-control"style=" width: 250px;" [(ngModel)]="InputAddress1" id="inputAddress1" placeholder="1234 Main St" name="inputAddress1" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="inputAddress2">Address 2</label>
+      <textarea  class="form-control" style=" width: 250px;" [(ngModel)]="InputAddress2"  id="inputAddress2" placeholder="Apartment, studio, or floor" name="inputAddress2" required></textarea>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">City</label>
+        <input required type="text" style=" width: 250px;" class="form-control" id="inputCity" name="inputCity" [(ngModel)]="InputCity" >
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">State</label>
+        <select style=" width: 250px;" id="inputState" class="form-control" name="inputState" [(ngModel)]="InputState"  required>
+          <option value="1">Choose...</option>
+          <option value="2">Andrapradesh</option>
+          <option value="3">Telangana </option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Zip</label>
+        <input style="width: 250px;" type="text" class="form-control" id="inputZip" name="inputZip" [(ngModel)]="Inputzip" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input  class="form-check-input" type="checkbox" id="gridCheck" name="formcheck" [(ngModel)]="InputCheck" checked required>
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
+      </div>
+    </div>
+    <button [disabled]="!LogIn.valid" type="submit" class="btn btn-primary">Sign in</button>
+ 
+
+    <input type="submit"  style="margin-left:25px;" (click)="reset(LogIn)"  value="reset" class="btn btn-primary">
+    <input type="submit"  style="margin-left:25px;" (click)="SetValues(LogIn)"  value="SetValues" class="btn btn-primary">
+  </form>
+</div>
+<label>{{Email}}</label>
+<br>
+<label>{{Password}}</label>
+<br>
+<label>{{InputAddress1}}</label>
+<br>
+<label>{{InputAddress2}}</label>
+<br>
+<label>{{InputCity}}</label>
+<br>
+<label>{{InputState}}</label>
+<br>
+<label>{{Inputzip}}</label>
+<br>
+<label>{{InputCheck}}</label>
